@@ -18,13 +18,14 @@ public class Vaga {
     private String descriptionVaga;
     private int quantityVagas;
 
-//    @DBRef
-//    List<>
+    @DBRef
+    Empress empress;
 
-    public Vaga(String descriptionVaga, String id, int quantityVagas, String title) {
+    public Vaga(String descriptionVaga, String id, int quantityVagas, String title, Empress empress) {
         this.descriptionVaga = descriptionVaga;
         this.id = id;
         this.quantityVagas = quantityVagas;
         this.title = title;
+        this.empress = empress;
     }
 }
