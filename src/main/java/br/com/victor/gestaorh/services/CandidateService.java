@@ -2,9 +2,11 @@ package br.com.victor.gestaorh.services;
 
 import br.com.victor.gestaorh.domain.Candidate;
 import br.com.victor.gestaorh.repository.CandidateRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CandidateService {
 
     private final CandidateRepository candidateRepository;

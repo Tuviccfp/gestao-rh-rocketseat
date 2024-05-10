@@ -2,9 +2,11 @@ package br.com.victor.gestaorh.services;
 
 import br.com.victor.gestaorh.domain.Curriculo;
 import br.com.victor.gestaorh.repository.CurriculoRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CurriculoService {
     private final CurriculoRepository curriculoRepository;
 

@@ -2,9 +2,11 @@ package br.com.victor.gestaorh.services;
 
 import br.com.victor.gestaorh.domain.Vaga;
 import br.com.victor.gestaorh.repository.VagaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class VagaService {
     private final VagaRepository vagaRepository;
 

@@ -2,9 +2,11 @@ package br.com.victor.gestaorh.services;
 
 import br.com.victor.gestaorh.domain.Empress;
 import br.com.victor.gestaorh.repository.EmpressRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EmpressService {
     private final EmpressRepository empressRepository;
 
