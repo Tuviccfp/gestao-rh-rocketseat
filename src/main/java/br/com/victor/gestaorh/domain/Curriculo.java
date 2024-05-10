@@ -5,13 +5,15 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 @Getter
 @Setter
 @Document
-public class Curriculo {
+public class Curriculo implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     private String id;
     private String nome;
@@ -25,18 +27,11 @@ public class Curriculo {
         this.nome = nome;
     }
 
-    public void setCompetencias(int quantityCompetencias, String value) {
-        for (int i = 0; i < quantityCompetencias; i++) {
-            this.competencias.put(i++, value);
-        }
+    public void addCompetencias(Integer chave, String value) {
+        this.competencias.put(chave, value);
     }
 
-    public void setEndereco(String value) {
-        this.endereco.put("Rua:", value);
-        this.endereco.put("N° da casa/prédio: ", value);
-        this.endereco.put("Bairro:", value);
-        this.endereco.put("Bairro: ", value);
-
+    public void addEndereco(String chave, String value) {
+        this.endereco.put(chave, value);
     }
-
 }
