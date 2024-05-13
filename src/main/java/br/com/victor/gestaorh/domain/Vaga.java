@@ -22,6 +22,8 @@ public class Vaga implements Serializable {
 
     @DBRef
     Empress empress;
+    @DBRef
+    List<Candidate> candidates;
 
     public Vaga(String descriptionVaga, String id, int quantityVagas, String title, Empress empress) {
         this.descriptionVaga = descriptionVaga;
@@ -29,5 +31,13 @@ public class Vaga implements Serializable {
         this.quantityVagas = quantityVagas;
         this.title = title;
         this.empress = empress;
+    }
+
+    public void addCandidate(Candidate candidate) {
+        this.candidates.add(candidate);
+    }
+
+    public String returnToCreate() {
+        return "Vaga criada com sucesso";
     }
 }

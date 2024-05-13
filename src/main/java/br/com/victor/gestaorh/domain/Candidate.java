@@ -15,17 +15,15 @@ public class Candidate implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     private String id;
-    private String name;
-    private boolean applicationVaga;
-    private String vagaPretendida;
 
     @DBRef
     private Curriculo curriculo;
+    @DBRef
+    private Vaga vaga;
 
-    public Candidate(boolean applicationVaga, String id, String name, Curriculo curriculo) {
-        this.applicationVaga = applicationVaga;
+    public Candidate(String id, Curriculo curriculo, Vaga vaga) {
         this.id = id;
-        this.name = name;
         this.curriculo = curriculo;
+        this.vaga = vaga;
     }
 }

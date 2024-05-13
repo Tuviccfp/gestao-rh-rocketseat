@@ -4,10 +4,7 @@ import br.com.victor.gestaorh.domain.Curriculo;
 import br.com.victor.gestaorh.services.CurriculoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -18,6 +15,12 @@ public class CurriculoController {
     private final CurriculoService curriculoService;
     public CurriculoController(CurriculoService curriculoService) {
         this.curriculoService = curriculoService;
+    }
+
+    @GetMapping(value = "/search-curriculo")
+    public ResponseEntity<Curriculo> findById(@RequestBody String id) {
+        Curriculo curriculo = curriculoService.findById(id);
+        return new ResponseEntity<>(curriculo, HttpStatus.OK);
     }
 
     @PostMapping(value = "/create-curriculo")

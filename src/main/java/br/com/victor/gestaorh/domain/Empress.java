@@ -20,14 +20,19 @@ public class Empress implements Serializable {
     private String nome;
     private String descriptionEmpress;
 
-    @Setter
     @DBRef
-    List<Candidate> candidates = new ArrayList<>();
+    List<Vaga> vagas = new ArrayList<>();
 
     public Empress(String id, String nome, String descriptionEmpress) {
         this.id = id;
         this.nome = nome;
         this.descriptionEmpress = descriptionEmpress;
     }
+    public void addVagas(Vaga vaga) {
+        this.vagas.add(vaga);
+    }
 
+    public String returnToStringCreate() {
+        return "Empresa criada com sucesso. O identificador da sua empresa é: " + getId();
+    }
 }
